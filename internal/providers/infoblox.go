@@ -27,11 +27,11 @@ func SetInfobloxEnv(username string, password string, extraEnvVars map[string]st
 		return "", errors.New("Infoblox username or password are empty")
 	}
 
-	fmt.Printf("INFOBLOX_USERNAME=%s\n", username)
-	fmt.Printf("INFOBLOX_PASSWORD=%s\n", password)
+	fmt.Printf("INFOBLOX_USERNAME='%s'\n", username)
+	fmt.Printf("INFOBLOX_PASSWORD='%s'\n", password)
 
 	for k, v := range extraEnvVars {
-		fmt.Printf("%s=%s\n", k, v)
+		fmt.Printf("%s='%s'\n", k, v)
 	}
 	return "", nil
 }

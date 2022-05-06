@@ -29,11 +29,11 @@ func SetAzureEnv(secret vaulthelper.AzureSecretsEngineResponse, extraEnvVars map
 		return "", errors.New("Azure secret is not valid")
 	}
 
-	fmt.Printf("ARM_CLIENT_ID=%s\n", secret.ClientId)
-	fmt.Printf("ARM_CLIENT_SECRET=%s\n", secret.ClientSecret)
+	fmt.Printf("ARM_CLIENT_ID='%s'\n", secret.ClientId)
+	fmt.Printf("ARM_CLIENT_SECRET='%s'\n", secret.ClientSecret)
 
 	for k, v := range extraEnvVars {
-		fmt.Printf("%s=%s\n", k, v)
+		fmt.Printf("%s='%s'\n", k, v)
 	}
 	return "", nil
 }

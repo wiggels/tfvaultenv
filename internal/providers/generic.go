@@ -22,11 +22,11 @@ import (
 
 func SetGenericEnv(genericEnvVars map[string]string, extraEnvVars map[string]string, expandEnv bool) (string, error) {
 	for k, v := range genericEnvVars {
-		fmt.Printf("%s=%s\n", k, v)
+		fmt.Printf("%s='%s'\n", k, v)
 	}
 
 	for k, v := range extraEnvVars {
-		s := fmt.Sprintf("%s=%s\n", k, v)
+		s := fmt.Sprintf("%s='%s'\n", k, v)
 		printEnv(s, expandEnv)
 	}
 
